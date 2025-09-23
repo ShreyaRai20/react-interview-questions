@@ -1,4 +1,5 @@
-import CinemaSeatBooking from "./components/CinemaSeatBooking"
+import QuesOne from "./questions/question-one-cinema-seat-booking/QuesOne"
+import QuesTwo from "./questions/question-two-file-explorer/QuesTwo"
 
 
 function App() {
@@ -6,9 +7,9 @@ function App() {
 
   return (
     <div>
-      <CinemaSeatBooking bookedSeats={['C2', 'C3', 'C6']} onBookingComplete={(booking) => {
-        console.log(booking)
-      }} />
+      <QuesOne />
+      <QuesTwo />
+
     </div>
   )
 }
