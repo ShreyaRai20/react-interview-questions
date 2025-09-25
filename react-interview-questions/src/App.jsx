@@ -1,7 +1,8 @@
 import QuesFour from "./questions/question-4-memory-game/QuesFour"
-import QuesOne from "./questions/question-one-cinema-seat-booking/QuesOne"
-import QuesThree from "./questions/question-three-pagination/QuesThree"
-import QuesTwo from "./questions/question-two-file-explorer/QuesTwo"
+import QuesOne from "./questions/question-1-cinema-seat-booking/QuesOne"
+import QuesThree from "./questions/question-3-pagination/QuesThree"
+import QuesTwo from "./questions/question-2-file-explorer/QuesTwo"
+import QuestionFive from "./questions/question-5-progress-bar/QuestionFive"
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <QuesTwo />
       <QuesThree />
       <QuesFour />
+      <QuestionFive />
     </div>
   )
 }
