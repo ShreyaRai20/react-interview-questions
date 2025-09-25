@@ -11,7 +11,6 @@ function PaginationTwo() {
     const fetchProducts = async () => {
         const res = await fetch(`https://dummyjson.com/products?limit=10&skip=${page * 10 - 10}`)
         const data = await res.json()
-        console.log(data, "from two")
         if (data && data.products) {
             setProducts(data.products)
             setTotalPages(Math.ceil(data.total / 10))
