@@ -33,7 +33,7 @@ function QuesSix() {
     return (
         <div className='w-full bg-gray-50 p-4'>
             <h1 className="text-3xl text-center underline text-red-900">Q6. Grid Lights</h1>
-            <div className='max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-6 flex justify-center align center'>
+            <div className='max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-6 flex justify-center align center  '>
                 <div className="grid grid-cols-3 w-[250px] gap-2">
                     {config.flat(1).map((row, index) => {
                         if (row) {

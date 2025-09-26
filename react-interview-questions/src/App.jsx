@@ -4,19 +4,21 @@ import QuesThree from "./questions/question-3-pagination/QuesThree"
 import QuesTwo from "./questions/question-2-file-explorer/QuesTwo"
 import QuestionFive from "./questions/question-5-progress-bar/QuestionFive"
 import QuesSix from "./questions/question-6-grid-lights/QuesSix"
+import QuesSeven from "./questions/question-7-tic-tac-toe/QuesSeven"
 
 
 function App() {
 
 
   return (
-    <div>
+    <div className=''>
       <QuesOne />
       <QuesTwo />
       <QuesThree />
       <QuesFour />
       <QuestionFive />
       <QuesSix />
+      <QuesSeven />
     </div>
   )
 }
