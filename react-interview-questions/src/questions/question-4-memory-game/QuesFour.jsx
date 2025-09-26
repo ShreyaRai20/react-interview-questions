@@ -17,6 +17,7 @@ function QuesFour() {
     }
 
     const initializeGame = () => {
+
         const totalCards = gridSize * gridSize
         const pairCount = Math.floor(totalCards / 2)
         const numbers = [...Array(pairCount).keys()].map(n => n + 1)
@@ -29,6 +30,8 @@ function QuesFour() {
         setFlipped([])
         setSolved([])
         setWon(false)
+        setDisabled(false)
+        setMove(0)
     }
 
     useEffect(() => {
@@ -36,17 +39,17 @@ function QuesFour() {
     }, [gridSize])
 
     useEffect(() => {
+        if (!won && move >= 5) {
+            setDisabled(true);  // lock the game
+        }
+    }, [move, won]);
+
+
+    useEffect(() => {
         if (cards.length > 0 && solved.length === cards.length) {
             setWon(true)
         }
     }, [solved, cards])
-
-    useEffect(() => {
-        console.log(move)
-        if (move >= 5 && !won) {
-            setDisabled(true)
-        }
-    }, [move, setDisabled, won])
 
     const checkMatch = (secondId) => {
         const [firstId] = flipped;
@@ -55,11 +58,14 @@ function QuesFour() {
             setSolved([...solved, firstId, secondId])
             setFlipped([])
             setDisabled(false)
-
         } else {
+            setMove((prev) => {
+                const newMove = prev + 1;
+                if (newMove <= 5) setDisabled(false);
+                return newMove;
+            })
             setTimeout(() => {
                 setFlipped([])
-                setDisabled(false)
             }, 1000)
         }
 
@@ -75,12 +81,9 @@ function QuesFour() {
         }
         if (flipped.length === 1) {
             setDisabled(true)
-            setMove((prev) => prev + 1)
-
             if (id !== flipped[0]) {
                 setFlipped([...flipped, id])
                 checkMatch(id)
-
 
             } else {
                 setFlipped([])
@@ -103,7 +106,7 @@ function QuesFour() {
                     <input type='number' id='gridSize' min="2" max="10" value={gridSize} onChange={handleGridSizwChange} />
                 </div>
                 {/* moves used */}
-                <div className=''>Moves left: {5 - move}</div>
+                <div className=''>Moves left: {move}/5</div>
                 {/* Game Board */}
                 <div className='flex w-full align-center justify-center'>
                     <div className={`grid grid-cols-4 w-xs gap-1`}
@@ -139,7 +142,9 @@ function QuesFour() {
                 {/* Result */}
                 {won && <div className='text-green-800 text-center text-bold text-5xl m-1.5'> YOU WON!!!</div>}
                 {/* Reset Button */}
-                {won && <button onClick={initializeGame}>reset</button>}
+                <div className='w-full flex justify-center align-center m-5'>
+                    {(won || move >= 5) && <button className='bg-blue-950 text-white py-4 px-8 rounded-2xl cursor-pointer' onClick={initializeGame}>reset</button>}
+                </div>
             </div>
         </div >
     )
