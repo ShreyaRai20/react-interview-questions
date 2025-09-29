@@ -85,7 +85,25 @@ function QuesSeven() {
                             return (<>
                                 {el.map((ele, j) => {
                                     return (
-                                        <div key={Math.random()} className={`w-15 h-15  flex justify-center align-center rounded-lg ${(ele === 'X' || ele === 'O' || won) && 'pointer-events-none'} ${ele === 'X' ? ele === 'O' ? won ? 'bg-green-500' : 'bg-red-500' : 'bg-sky-500' : 'border-2 border-black'}`} onClick={() => { handleClick(i, j) }}>{ele}</div>
+                                        <div key={Math.random()} className={`w-15 h-15  flex justify-center align-center rounded-lg ${(ele === 'X' || ele === 'O' || won) && 'pointer-events-none'} 
+                                            ${won
+                                                ? 'bg-gray-500'
+                                                : ele === 'X'
+                                                    ? 'bg-sky-500'
+                                                    : ele === 'O'
+                                                        ? 'bg-red-500'
+                                                        : 'border-2 border-black'
+                                            }
+
+                                            
+                                            
+                                                //     ? 'bg-green-500'
+                                                //         ? ele === 'X'
+                                                //             ? 'bg-sky-500'
+                                                //             : ele === 'O'
+                                                //                 ? 'bg-red-500' : 'border-2 border-black' }
+
+                                                `} onClick={() => { handleClick(i, j) }}>{ele}</div>
                                     )
                                 })}
                             </>)
