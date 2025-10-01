@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 import Layout from "./Layout"
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <>
     <Layout>
       {/* Your routes or main content */}
-      helllo
+      <Outlet/>
     </Layout>
     </>
   )
