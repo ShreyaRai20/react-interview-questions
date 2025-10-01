@@ -24,32 +24,32 @@ const items = [
     url: "file-explorer",
 
   },
-  {
-    title: "pagination",
-    url: "pagination",
+  // {
+  //   title: "pagination",
+  //   url: "pagination",
   
-  },
-  {
-    title: "memory-game",
-    url: "memory-game",
+  // },
+  // {
+  //   title: "memory-game",
+  //   url: "memory-game",
     
-  },
-  {
-    title: "progress-bar",
-    url: "progress-bar",
+  // },
+  // {
+  //   title: "progress-bar",
+  //   url: "progress-bar",
   
-  },
-  {
-    title: "grid-lights",
-    url: "grid-lights",
+  // },
+  // {
+  //   title: "grid-lights",
+  //   url: "grid-lights",
 
-  },
+  // },
 
-  {
-    title: "tic-tac-toe",
-    url: "tic-tac-toe",
+  // {
+  //   title: "tic-tac-toe",
+  //   url: "tic-tac-toe",
 
-  },
+  // },
 ]
 
 export function AppSidebar() {
